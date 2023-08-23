@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-left: 600px;
+    margin-top: 100px;
+}
+
+[data-Tooltip] {
+    position: relative;
+}
+
+[data-Tooltip]:hover::after {
+    content: attr(data-Tooltip);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5%;
+    padding: 5px;
+    background-color: lightgray;    
+}
