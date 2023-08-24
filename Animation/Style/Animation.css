@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 200vh;
+}
+.container {
+    width: 450px;
+    height: 450px;
+    margin: auto;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+}
+.circle {
+    background-color: tomato;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: 1s ease-in-out ;
+}
+
+.container:hover #child {
+    transform: translateX(370px) scale(0.4);
+    background-color: green;
+}
+#rotate {
+    animation: left-to-right 2s ease-in-out forwards infinite alternate 1s;
+}
+.container:hover #rotate {
+    animation-play-state: paused;
+}
+
+@keyframes left-to-right {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateY(350px);
+        background-color: aquamarine;
+    }
+    66% {
+        transform: translate(350px, 350px);
+        background-color: khaki;
+    }
+    100% {
+        transform: translateX(350px);
+    }
+}
