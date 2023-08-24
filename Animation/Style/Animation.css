@@ -24,7 +24,7 @@ body {
 
 .container:hover #child {
     transform: translateX(370px) scale(0.4);
-    background-color: green;
+    background-color: crimson;
 }
 #rotate {
     animation: left-to-right 2s ease-in-out forwards infinite alternate 1s;
