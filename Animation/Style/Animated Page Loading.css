@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --navbar-load-time: 300ms;
+    --navbar-icon-load-time: 500ms;
+    --article-load-time: calc(var(--navbar-load-time) + var(--navbar-icon-load-time));
+}
+nav {
+    background-color: rgb(68, 101, 168);
+    color: white;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+nav li {
+    padding: 12px 25px;
+    opacity: 0;
+}
+nav li:hover {
+    background-color: #ffffff44;
+}
+nav a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+article {
+    padding: 25px;
+}
+article h1 {
+    font-size: 40px;
+    opacity: 0;
+}
+article p {
+    font-size: 1.2rem;
+    padding: 10px 0px;
+    opacity: 0;
+}
+
+/* Animation */
+nav {
+    animation: Top-up var(--navbar-load-time) ease-in-out forwards;
+}
+nav li:first-child {
+    animation: left-to-right var(--navbar-icon-load-time) ease-in forwards var(--navbar-load-time);
+}
+nav li {
+    animation: grow var(--navbar-icon-load-time) ease-in forwards var(--navbar-load-time);
+}
+nav li:last-child {
+    animation: right-to-left var(--navbar-icon-load-time) ease-in forwards var(--navbar-load-time);
+}
+article h1 {
+    animation: article-heading var(--navbar-icon-load-time) ease-in forwards
+                var(--article-load-time);
+}
+article p {
+    animation: article-heading var(--navbar-icon-load-time) ease-in forwards
+                calc(var(--article-load-time) + 500ms);
+}
+
+/* Animation keys */
+@keyframes Top-up {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes left-to-right {
+    0% {
+        transform: translateX(-500%);
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes grow {
+    0% {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes right-to-left {
+    0% {
+        transform: translateX(500%);
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes article-heading {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
