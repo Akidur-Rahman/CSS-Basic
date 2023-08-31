@@ -9,6 +9,7 @@ body {
 
 .container {
     position: relative;
+    border-right: 2px solid black;
     width: 500px;
     height: 500px;
     margin: auto;
@@ -115,7 +116,7 @@ body {
     }
 
     100% {
-        transform: translate(300px, 450px) scale(1);
+        transform: translate(300px, 450px) scale(0.5);
         opacity: 1;
     }
 }
