@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+.container{
+    display: flex;
+
+    background-color: white;
+    width: 600px;
+    height: 400px;
+} 
+.flex {
+    display: grid;
+    justify-content: center;
+    background-color: aqua;
+    width: 50%;
+}
+.grid{
+    display: grid;
+    justify-content: center;
+    background-color: cadetblue;
+    width: 50%;
+}
+.Layout{
+    background-color: bisque;
+    width: 200px;
+}
