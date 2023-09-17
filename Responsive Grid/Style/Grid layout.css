@@ -9,8 +9,8 @@ body{
     height: 100vh;
 }
 .container{
-    display: flex;
-
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
     background-color: white;
     width: 600px;
     height: 400px;
@@ -18,16 +18,58 @@ body{
 .flex {
     display: grid;
     justify-content: center;
-    background-color: aqua;
-    width: 50%;
 }
 .grid{
     display: grid;
     justify-content: center;
-    background-color: cadetblue;
-    width: 50%;
 }
-.Layout{
-    background-color: bisque;
-    width: 200px;
+.FlexLayout{
+    display: grid;
+    grid-template-columns: repeat(3, 77px);
+    gap: 10px;
+    margin-top: 50px;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+}
+.flexColumn{
+    background-color: green;
+}
+.GridLayout{
+    display: grid;
+    grid-template-columns: repeat(3, 77px);
+    grid-template-rows: repeat(3, 77px);
+    gap: 10px;
+
+    margin-top: 50px;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+}
+.gridColumn-1 {
+    background-color: red;
+}
+.gridColumn-2 {
+    grid-column: span 2;
+    background-color: purple;
+}
+.gridColumn-3 {
+    grid-column: span 2;
+    background-color: purple;
+}
+.gridColumn-4 {
+    grid-row: span 2;
+    background-color: blue;
+}
+.gridColumn-5 {
+    background-color: red;
+}
+.gridColumn-6 {
+    background-color: red;
+}
+
+.Text {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 50px;
 }
