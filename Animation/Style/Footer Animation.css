@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    --squaze-time: 1.5s;
+}
+body{
+    animation: dark-theme 0.5s ease-in forwards 4s;
+}
+.container{
+    position: relative;
+}
+.list-item {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    column-gap: 280px;
+    justify-content: center;
+    width: 100vw;
+    padding: 15px;
+    margin-top: 220px;
+    animation: section-animation calc((2*var(--squaze-time))) ease-in forwards var(--squaze-time);
+}
+.list-item ul {
+    list-style: none;
+    font-size: 12px;
+}
+.list-item li:first-child {
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+.list-item li {
+    padding: 2px;
+}
+.list-item li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+}
+.black-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    left: 46%;
+    top: 40%;
+    opacity: 0;
+    animation: grow-up var(--squaze-time) ease-in calc((1s + var(--squaze-time))) forwards;
+}
+.white-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    left: 46%;
+    top: 40%;
+    opacity: 0;
+    animation: grow-up var(--squaze-time) ease-in calc((2*var(--squaze-time))) forwards ;
+}
+.Box-Squaze {
+    animation: squaze-fall var(--squaze-time) ease-in forwards;
+    margin-bottom: 10px;
+}
+
+/* Animations */
+
+@keyframes squaze-fall{
+    0%{
+        transform: translate(0px, -240px);
+    }
+    40%{
+        transform: translateY(0px);
+    }
+    60%{
+        transform: scaleY(0.2);
+    }
+    85%{
+        transform: scaleY(2.5);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes section-animation {
+    0%{
+        column-gap: 280px;
+    }
+    20%{
+        column-gap: 0px;
+    }
+    25%{
+        column-gap: 0px;
+        transform: scale(1);
+    }
+    50%{
+        column-gap: 0px;
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes grow-up {
+    0% {
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    50% {
+        transform: scale(20);
+        opacity: 1;
+    }
+    95%{
+        transform: scale(20);
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes dark-theme {
+    100%{
+        color: white;
+        background-color: black;
+    }
+}
